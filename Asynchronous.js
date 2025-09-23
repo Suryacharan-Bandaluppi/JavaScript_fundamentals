@@ -1,4 +1,4 @@
-const API_KEY = "265bd8bd25cbad0fa267460b686122de";
+// const API_KEY = secret_api_key;
 
 // function fetchWeatherCallback(city, callback) {
 //     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
