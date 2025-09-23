@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Concepts</title>
+</head>
+<body>
+    <h3>Enter the Products to add to the Cart</h3>
+    <input type="text" id="product" placeholder="Enter Product:">
+    <button id="btn" type="submit">Add</button>
+    <button id="showbtn" type="submit">Show Products</button>
+    <p id="para"></p>
+    
+    <script>
+        let productList=[]
+        let para=document.getElementById("para");
+        let button=document.getElementById("btn");
+        let product=document.getElementById("product");
+        button.addEventListener("click",function(e){
+            productList.push(product.value);
+            
+            product.value="";
+        }) 
+        let showbtn=document.getElementById("showbtn");
+        showbtn.addEventListener("click",function(){
+            para.innerHTML="";
+            for(let i=0;i<productList.length;i++){
+                para.innerHTML+=`${productList[i]}<br>`;
+            }
+        })
+    </script>
+</body>
+</html>
