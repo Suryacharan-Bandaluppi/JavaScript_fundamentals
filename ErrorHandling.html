@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+    <style>
+       
+        .form{
+            padding: 10px;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">Hey User Enter Your details</div>
+    <div class="form">
+    <label for="name">Username:</label>
+    <input type="text" id="name" placeholder="Enter Your Name" required>
+    <label for="email">Email:</label>
+    <input type="text" id="email" placeholder="Enter Your Email" required>
+    <label for="pwd">Password:</label>
+    <input type="text" id="pwd" placeholder="Enter Your Password" required>
+    <button type="button" onclick="handleSubmit()">Submit</button>
+</body>
+<script>
+    // function handleSubmit(){
+    //         let name = document.getElementById("name").value.trim();
+    //         let email = document.getElementById("email").value.trim();
+    //         let pwd = document.getElementById("pwd").value.trim();
+
+    //         if(name === ""){
+    //             alert("Name should not be empty");
+    //             return;
+    //         }
+    //         if(email === ""){
+    //             alert("Email should not be empty");
+    //             return;
+    //         }
+    //         if(!email.includes("@") || !email.includes(".") || email.length<10){
+    //             alert("Please enter a valid email");
+    //             return;
+    //         }
+    //         if(email.indexOf("@") > email.lastIndexOf(".")){
+    //             alert("Please enter a valid email");
+    //             return;
+    //         }
+    //         if(email.startsWith("@") || email.endsWith("@") || email.endsWith(".")){
+    //             alert("Please enter a valid email");
+    //             return;
+    //         }
+
+    //         if(pwd === ""){
+    //             alert("Password should not be empty");
+    //             return;
+    //         }
+    //         if(pwd.length < 6){
+    //             alert("Password must be at least 6 characters long");
+    //             return;
+    //         }
+
+    //         alert("Login Successful!");
+    //     }
+        function handleSubmit() {
+            try {
+                let name = document.getElementById("name").value.trim();
+                let email = document.getElementById("email").value.trim();
+                let pwd = document.getElementById("pwd").value.trim();
+
+                if(name === ""){
+                    throw "Name should not be empty";
+                }
+                if(email === ""){
+                    throw "Email should not be empty";
+                }
+                if(!email.includes("@") || !email.includes(".") || email.length < 10){
+                    throw "Please enter a valid email";
+                }
+                if(email.indexOf("@") > email.lastIndexOf(".")){
+                    throw "Please enter a valid email";
+                }
+                if(email.startsWith("@") || email.endsWith("@") || email.endsWith(".")){
+                    throw "Please enter a valid email";
+                }
+                if(pwd === ""){
+                    throw "Password should not be empty";
+                }
+                if(pwd.length < 6){
+                    throw "Password must be at least 6 characters long";
+                }
+
+                alert("Login Successful!");
+            } 
+            catch (err) {
+                alert("Error: " + err);
+            }
+        }
+</script>
+</html>
