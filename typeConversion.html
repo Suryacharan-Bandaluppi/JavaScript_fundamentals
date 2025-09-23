@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types-Type Conversion</title>
+</head>
+<body>
+    <h1>Enter price to Convert into String</h1>
+    <input type="text" id="price" placeholder="Enter Price">
+    <button id="button">Submit</button>
+    <p id="para"></p>
+</body>
+   <script>
+    let price = document.getElementById("price");
+    let button = document.getElementById("button");
+    let para = document.getElementById("para");
+    button.addEventListener("click", function(e) {
+        e.preventDefault();
+        let priceValue = price.value;
+        console.log("String value:", priceValue, "Type:", typeof priceValue);   
+        let priceNumber = Number(priceValue);
+        console.log("Number value:", priceNumber, "Type:", typeof priceNumber);
+        para.innerHTML = `<div>Before Submit: String value: ${priceValue} , 
+            Type: ${typeof priceValue} </div>\n <div> After Submit: Number value: ${priceNumber}, Type: ${typeof priceNumber}</div>`;
+    });
+   </script>
+</html>
