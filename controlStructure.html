@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Structure</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="role" placeholder="Enter your role" name="role" required>
+        <button id="button">Submit</button>
+        <p id="para"></p>
+    </div>
+    <script>
+        let role=document.getElementById("role");
+        let button=document.getElementById("button");
+        let para=document.getElementById("para");
+        button.addEventListener("click",function(){
+            let roleValue=role.value;
+            if(roleValue=="admin"){
+                para.innerHTML=`<div> Hello ${roleValue}, Welcome to Admin Dashboard </div>`;
+            }
+            else if(roleValue=="guest"){
+                para.innerHTML=`<div> Hello ${roleValue}, Welcome to Guest Dashboard </div>`;
+            }
+            else{
+                para.innerHTML=`<div> Hello ${roleValue}, Welcome to Member Dashboard </div>`;
+            }
+        })
+        
+    </script>
+</body>
+</html>
